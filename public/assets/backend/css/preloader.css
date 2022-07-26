@@ -1,0 +1,120 @@
+#preloader .loader
+{
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+#preloader .loader .loader-inner-1,
+#preloader .loader .loader-inner-2,
+#preloader .loader .loader-inner-3,
+#preloader .loader .loader-inner-4
+
+{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    position: absolute;
+
+}
+#preloader .loader .loader-inner-1:before,
+#preloader .loader .loader-inner-2:before,
+#preloader .loader .loader-inner-3:before,
+#preloader .loader .loader-inner-4:before
+{
+    content:"";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    position: absolute;
+    right: 0;
+    animation-name: loading-1;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-duration: 2s;
+
+}
+
+#preloader .loader .loader-inner-1
+{
+    top: 0;
+    left: 0;
+    transform: rotate(70deg);
+}
+
+#preloader .loader .loader-inner-1:before
+{
+    background: var(--primary);
+}
+
+#preloader .loader .loader-inner-2
+{
+    top: 0;
+    right: 0;
+    transform: rotate(160deg);
+}
+
+#preloader .loader .loader-inner-2:before
+{
+    background: var(--secondary);
+}
+
+#preloader .loader .loader-inner-3
+{
+    bottom: 0;
+    right: 0;
+    transform: rotate(-110deg);
+}
+
+#preloader .loader .loader-inner-3:before
+{
+    background: var(--primary-hover);
+}
+
+#preloader .loader .loader-inner-4
+{
+    bottom: 0;
+    left: 0;
+    transform: rotate(-20deg);
+}
+
+#preloader .loader .loader-inner-4:before
+{
+    background: var(--primary-dark);
+}
+#preloader .loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99999;
+}
+[data-theme-version="dark"] #preloader .loader-wrapper {
+    background-color: #171622;
+}
+@keyframes loading-1
+{
+    0%
+    {
+        width: 20px;
+        right: 0;
+    }
+
+    30%
+    {
+        width: 120px;
+        right: -100px;
+    }
+
+    60%
+    {
+        width: 20px;
+        right: -100px;
+    }
+
+}

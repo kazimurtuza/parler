@@ -1,0 +1,327 @@
+.rsbtn-1 {
+    padding: 10px 30px;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 40px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+
+    background: linear-gradient(90deg, rgba(76, 188, 211, 1) 0%, rgba(1, 140, 196, 1) 100%);
+    border: 0;
+}
+.rsbtn-1::before {
+    background: linear-gradient(90deg, rgba(1, 140, 196, 1) 0%, rgba(76, 188, 211, 1) 100%);
+    transform: scale(0, 1);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 40px;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    z-index: -1;
+    opacity: 0;
+}
+.rsbtn-1:hover {
+    color: #fff;
+}
+.rsbtn-1:hover::before {
+    opacity: 1;
+}
+.rsbtn-1.color-primary {
+    background: var(--primary-gradient-1) !important;
+}
+.rsbtn-1.color-primary::before {
+    background: var(--primary-gradient-1-hover) !important;
+}
+
+
+
+.rsbtn-2 {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.rsbtn-2 .rsbtn-2_circle{
+    background-color: red;
+    border-radius: 1000px;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    pointer-events: none;
+    /*animation-timing-function: ease-in-out; */
+}
+
+.rsbtn-2 .rsbtn-2_inner{
+    display: inline-block;
+    background: var(--primary);
+    color: #F4F4F4;
+    /*font-size: 16px;
+    font-weight: normal;*/
+    text-align: center;
+    border-radius: 10px !important;
+    transition: 400ms;
+    text-decoration: none;
+    padding: 10px 20px;
+    z-index: 100000;
+    border: 0;
+}
+
+.rsbtn-2 .button_text_container{
+    position:relative;
+    z-index: 10000;
+}
+.rsbtn-2 .explode-circle {
+    animation: explode 0.5s forwards;
+}
+.rsbtn-2 .desplode-circle{
+    animation: desplode 0.5s forwards;
+}
+@keyframes explode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: var(--primary-dark);
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: var(--primary-dark);
+    }
+}
+
+@keyframes desplode {
+    0% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: var(--primary-dark);
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: var(--primary-dark);
+    }
+}
+
+
+
+
+
+
+.rsbtn-3 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    background: #ff3f3f;
+    position: relative;
+    z-index : 2;
+}
+
+.rsbtn-3::before, .rsbtn-3::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background: rgba(255, 63, 63, 0.8);
+    animation: ripple-1 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+.rsbtn-3::after {
+    background: rgba(255, 63, 63, 0.6);
+    animation: ripple-2 2s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes ripple-1 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-2 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rsbtn-4{
+    color: #fff;
+    background-color: var(--primary);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0;
+    border-radius: 7px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+    border: none;
+}
+.rsbtn-4:before,
+.rsbtn-4:after,
+.rsbtn-4 span:before,
+.rsbtn-4 span:after{
+    content: '';
+    background: linear-gradient(to bottom,#FF416C,#FF4B2B);
+    width: 25%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+.rsbtn-4:before{
+    transform: scaleY(0.2);
+    transition-delay: 0.3s;
+}
+.rsbtn-4:after{
+    transform: scaleY(0.45);
+    left: 25%;
+    transition-delay: 0.2s;
+}
+.rsbtn-4 span:before{
+    transform: scaleY(0.65);
+    left: 50%;
+    z-index: -1;
+    transition-delay: 0.1s;
+}
+.rsbtn-4 span:after{
+    transform: scaleY(0.8);
+    left: 75%;
+    z-index: -1;
+}
+.rsbtn-4 span{
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+.rsbtn-4:hover:before,
+.rsbtn-4:hover:after,
+.rsbtn-4:hover span:before,
+.rsbtn-4:hover span:after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.rsbtn-4.orange:before,
+.rsbtn-4.orange:after,
+.rsbtn-4.orange span:before,
+.rsbtn-4.orange span:after{
+    background: linear-gradient(to bottom, #f7b42c, #fc575e);
+}
+.rsbtn-4.blue:before,
+.rsbtn-4.blue:after,
+.rsbtn-4.blue span:before,
+.rsbtn-4.blue span:after{
+    background: linear-gradient(to bottom, #7f53ac, #647dee);
+}
+.rsbtn-4.green:before,
+.rsbtn-4.green:after,
+.rsbtn-4.green span:before,
+.rsbtn-4.green span:after{
+    background: linear-gradient(to bottom, #3bb78f, #0bab64);
+}
+.rsbtn-4.primary-dark:before,
+.rsbtn-4.primary-dark:after,
+.rsbtn-4.primary-dark span:before,
+.rsbtn-4.primary-dark span:after{
+    background: var(--primary-dark);
+}
+.rsbtn-4:hover{ color: #fff; }
+@media only screen and (max-width: 767px){
+    .rsbtn-4{ margin-bottom: 20px; }
+}
+
+
+
+
+
+.rsbtn-5 {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.rsbtn-5 .button-layer{
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background-image: linear-gradient(135deg,#9708CC, #43CBFF,#9708CC, #43CBFF );
+    transition: all 0.4s ease;
+    border-radius: 25PX;
+}
+.rsbtn-5:hover .button-layer{
+    left: 0;
+}
+.rsbtn-5 button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
